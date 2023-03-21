@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% include "header.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Save Note</title>
+	<style>
+		form {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fcdcdc;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		}
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-size: 18px;
+			color: #333;
+			font-weight: bold;
+		}
+		input[type="text"],
+		textarea {
+			display: block;
+			margin-bottom: 20px;
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: none;
+			background-color: #fff;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+			width: 100%;
+		}
+		textarea {
+			resize: vertical;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 18px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.2s ease;
+		}
+		input[type="reset"] {
+			background-color: #1e90ff;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 18px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.2s ease;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<div>
+<body>
+	<form method="POST" action="/save">
+		<label for="filename">Filename:</label>
+		<input type="text" id="filename" name="filename" placeholder="Enter filename"><br><br>
+		<label for="note">Note:</label><br>
+		<textarea id="note" name="note" rows="8" cols="50" placeholder="Enter note"></textarea><br><br>
+		<input type="submit" value="Save">
+		<input type="reset" class="float-right" value="Reset">
+	</form>
+</body>
+</div>
+</html>
+
+{% endblock %}
