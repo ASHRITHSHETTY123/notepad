@@ -8,7 +8,7 @@ import glob
 
 
 app = Flask(__name__)
-repo = Repo(r"C:\Users\ASHRITH SHETTY\Desktop\notepad")
+repo = Repo(r"C:\Users\ASHRITH SHETTY\Desktop\MYNOTEPAD")
 
 @app.route('/')
 def index():
